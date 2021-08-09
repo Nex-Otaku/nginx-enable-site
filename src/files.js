@@ -22,6 +22,14 @@ const isDirectoryWritable = (filePath) => {
     return true;
 }
 
+const getFiles = (path) => {
+    if (!directoryExists(path)) {
+        return [];
+    }
+
+    return fs.readdirSync(path);
+};
+
 const fileExists = (filePath) => {
     return fs.existsSync(filePath) && !directoryExists(filePath);
 };
@@ -30,9 +38,15 @@ const readFile = (filePath) => {
     return fs.readFileSync(filePath, 'utf8');
 };
 
+const deleteFile = (filePath) => {
+    return fs.unlinkSync(filePath);
+};
+
 module.exports = {
     directoryExists: directoryExists,
     isDirectoryWritable: isDirectoryWritable,
+    getFiles: getFiles,
     fileExists: fileExists,
-    readFile: readFile
+    readFile: readFile,
+    deleteFile: deleteFile
 };

@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 
 const commander = require('commander');
-const shell = require('./src/shell');
 const nginx = require('./src/nginx');
+
+const notImplemented = () => {
+    console.log('Not implemented yet. Want to make PR? https://github.com/Nex-Otaku/nginx-enable-site');
+}
 
 commander.version('1.0.0')
     .on('--help', () => {
@@ -52,30 +55,42 @@ commander.version('1.0.0')
 
         if (isEnable) {
             if ('list' in options) {
+                // TODO
                 //nginx.listSitesToEnable();
+                notImplemented();
+
                 return;
             }
 
             if (site === undefined) {
+                // TODO
                 //nginx.selectSiteToEnable();
+                notImplemented();
+
                 return;
             }
 
-            nginx.enable(site);
+            await nginx.enable(site);
         }
 
         if (isDisable) {
             if ('list' in options) {
+                // TODO
                 //nginx.listSitesToDisable();
+                notImplemented();
+
                 return;
             }
 
             if (site === undefined) {
+                // TODO
                 //nginx.selectSiteToDisable();
+                notImplemented();
+
                 return;
             }
 
-            nginx.disable(site);
+            await nginx.disable(site);
         }
     });
 
