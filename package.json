@@ -1,6 +1,6 @@
 {
   "name": "@nex_otaku/nginx-enable-site",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Enable and disable Nginx hosts",
   "main": "nginx-enable-site.js",
   "scripts": {
