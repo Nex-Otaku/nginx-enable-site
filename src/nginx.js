@@ -25,8 +25,6 @@ const enabledSiteLink = (site) => {
 }
 
 const makeSymlink = async (source, link) => {
-    console.log('Command to run: ' + 'ln -s ' + source + ' ' + link);
-
     return shell.run('ln -s ' + source + ' ' + link);
 }
 
