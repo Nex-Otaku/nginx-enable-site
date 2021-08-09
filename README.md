@@ -55,7 +55,6 @@ sudo npm install -g @nex_otaku/nginx-enable-site
 
 ## To Be Done
 
- - Disable site
  - List sites
  - Select site from menu  
 
