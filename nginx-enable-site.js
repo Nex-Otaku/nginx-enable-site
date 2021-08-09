@@ -24,6 +24,24 @@ commander.version('1.0.0')
             return;
         }
 
+        if (!nginx.existsAvailableSitesDir()) {
+            console.log('Directory "/etc/nginx/sites-available" doesnt exist. Sorry, but I cant work without it');
+
+            return;
+        }
+
+        if (!nginx.existsEnabledSitesDir()) {
+            console.log('Directory "/etc/nginx/sites-enabled" doesnt exist. Sorry, but I cant work without it');
+
+            return;
+        }
+
+        if (!nginx.isWritableEnabledSitesDir()) {
+            console.log('Directory "/etc/nginx/sites-enabled" is not writable for current user. Try running command with sudo');
+
+            return;
+        }
+
         const script = process.argv[1];
         const isEnable = script.endsWith('enable-site');
         const isDisable = script.endsWith('disable-site');
