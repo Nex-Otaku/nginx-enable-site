@@ -24,6 +24,16 @@ nginx-disable-site
 
 ```
 
+## Why
+
+Nginx does not provide you with convenient command to manage sites.
+
+You have to write your own command from scratch, or just deal with symlinks, but that would be tiresome.
+
+Instead, you can just install this cutie little command and forget about this problem forever.
+
+Syntax is very simple and straightforward.
+
 ## How it works
 
  - Read sites from folders "/etc/nginx/sites-enabled" and "/etc/nginx/sites-available"
@@ -45,13 +55,6 @@ To use this tool, you need [NodeJS](https://nodejs.org/).
 ```
 sudo npm install -g @nex_otaku/nginx-enable-site
 ```
-
-## Features
-
- - Recursive search is supported
- - Respects ".gitignore" rules
- - Skips directories with dot - ".git", ".idea" etc
- - Search can be limited to files or to directories
 
 ## To Be Done
 
