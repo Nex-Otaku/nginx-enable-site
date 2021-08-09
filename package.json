@@ -1,0 +1,26 @@
+{
+  "name": "@nex_otaku/nginx-enable-site",
+  "version": "1.0.0",
+  "description": "Enable and disable Nginx hosts",
+  "main": "nginx-enable-site.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "nginx-enable-site": "./nginx-enable-site.js",
+    "nginx-disable-site": "./nginx-enable-site.js"
+  },
+  "keywords": [
+    "Nginx",
+    "symlink",
+    "enable",
+    "host"
+  ],
+  "author": "Nex Otaku",
+  "license": "MIT",
+  "dependencies": {
+    "child-process-promise": "^2.2.1",
+    "commander": "^8.1.0"
+  }
+}
