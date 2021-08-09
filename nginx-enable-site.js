@@ -18,6 +18,12 @@ commander.version('1.0.0')
         site: 'Site name'
     })
     .action(async (site, options) => {
+        if (!nginx.isInstalled()) {
+            console.log('Sorry, it seems you have not installed Nginx yet. I cant find a directory "/etc/nginx" in your system.');
+
+            return;
+        }
+
         const script = process.argv[1];
         const isEnable = script.endsWith('enable-site');
         const isDisable = script.endsWith('disable-site');
